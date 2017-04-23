@@ -20,109 +20,113 @@ class DayH {
 template <>
 class DayH<Monday> {
 public:
-	DayH(bool is, string hypothesis, string nameA, string eventA, bool situationA, double LS, double LN, bool priority) :
-		nameH("Monday"), _is(is), _hypothesis(hypothesis), d(new DayA(nameA, eventA , situationA, LS, LN, priority)) {}
+	DayH(bool is, string hypothesis, DayA * dA) :
+		nameH("monday"), _is(is), _hypothesis(hypothesis), _dA(dA) {}
+	
 	bool getIs() { return this->_is; }
 	string  getName() { return this->nameH; }
 	string getHypotesis() { return this->_hypothesis; }
-	DayA * getDayA() { return d; }
+	DayA * getDayA() { return _dA; }
 private:
 	bool _is;
 	string nameH;
 	string _hypothesis;
-	DayA * d;
+	DayA * _dA;
 };
 
 
 template <>
 class DayH<Tuesday> {
 public:
-	DayH(bool is, string hypothesis, string nameA, string eventA, bool situationA, double LS, double LN, bool priority) :
-		nameH("Tuesday"), _is(is), _hypothesis(hypothesis), d(new DayA(nameA, eventA, situationA, LS, LN, priority)) {}
+	DayH(bool is, string hypothesis, DayA * dA) :
+		nameH("tuesday"), _is(is), _hypothesis(hypothesis), _dA(dA) {}
 	bool getIs() { return this->_is; }
 	string getName() { return this->nameH; }
 	string getHypotesis() { return this->_hypothesis; }
-	DayA * getDayA() { return d; }
+	DayA * getDayA() { return _dA; }
 private:
 	bool _is;
 	string nameH;
 	string _hypothesis;
-	DayA * d;
+	DayA * _dA;
 };
 
 template <>
 class DayH<Wednesday> {
 public:
-	DayH(bool is, string hypothesis, string nameA, string eventA, bool situationA, double LS, double LN, bool priority) :
-		nameH("Wednesday"), _is(is), _hypothesis(hypothesis), d(new DayA(nameA, eventA, situationA, LS, LN, priority)) {}
+	DayH(bool is, string hypothesis, DayA * dA) :
+		nameH("wednesday"), _is(is), _hypothesis(hypothesis), _dA(dA) {}
 	bool getIs() { return this->_is; }
 	string getName() { return this->nameH; }
 	string getHypotesis() { return this->_hypothesis; }
-	DayA * getDayA() { return d; }
+	DayA * getDayA() { return _dA; }
 private:
 	bool _is;
 	string nameH;
 	string _hypothesis;
-	DayA * d;
+	DayA * _dA;
 };
 template <>
 class DayH<Thursday> {
 public:
-	DayH(bool is, string hypothesis, string nameA, string eventA, bool situationA, double LS, double LN, bool priority) :
-		nameH("Thursday"), _is(is), _hypothesis(hypothesis), d(new DayA(nameA, eventA, situationA, LS, LN, priority)) {}
+	DayH(bool is, string hypothesis, DayA * dA) :
+		nameH("thursday"), _is(is), _hypothesis(hypothesis), _dA(dA) {}
 	bool getIs() { return this->_is; }
 	string getName() { return this->nameH; }
 	string getHypotesis() { return this->_hypothesis; }
-	DayA * getDayA() { return d; }
+	DayA * getDayA() { return _dA; }
 private:
 	bool _is;
 	string nameH;
 	string _hypothesis;
-	DayA * d;
+	DayA * _dA;
 };
 template <>
 class DayH<Friday> {
 public:
-	DayH(bool is, string hypothesis, string nameA, string eventA, bool situationA, double LS, double LN, bool priority) :
-		nameH("Friday"), _is(is), _hypothesis(hypothesis), d(new DayA(nameA, eventA, situationA, LS, LN, priority)) {}
+	DayH(bool is, string hypothesis, DayA * dA) :
+		nameH("friday"), _is(is), _hypothesis(hypothesis), _dA(dA) {}
 	bool getIs() { return this->_is; }
 	string getName() { return this->nameH; }
 	string getHypotesis() { return this->_hypothesis; }
-	DayA * getDayA() { return d; }
+	DayA * getDayA() { return _dA; }
 private:
 	bool _is;
 	string nameH;
 	string _hypothesis;
-	DayA * d;
+	DayA * _dA;
 };
-template <>
-class DayH<Sunday> {
-public:
-	DayH(bool is, string hypothesis, string nameA, string eventA, bool situationA, double LS, double LN, bool priority) :
-		nameH("Sunday"), _is(is), _hypothesis(hypothesis), d(new DayA(nameA, eventA, situationA, LS, LN, priority)) {}
-	bool getIs() { return this->_is; }
-	string getName() { return this->nameH; }
-	string getHypotesis() { return this->_hypothesis; }
-	DayA * getDayA() { return d; }
-private:
-	bool _is;
-	string nameH;
-	string _hypothesis;
-	DayA * d;
-};
+
 template <>
 class DayH<Saturday> {
 public:
-	DayH(bool is, string hypothesis, string nameA, string eventA, bool situationA, double LS, double LN, bool priority) :
-		nameH("Saturday"), _is(is), _hypothesis(hypothesis), d(new DayA(nameA, eventA, situationA, LS, LN, priority)) {}
+	DayH(bool is, string hypothesis, DayA * dA) :
+		nameH("saturday"), _is(is), _hypothesis(hypothesis), _dA(dA) {}
 	bool getIs() { return this->_is; }
 	string getName() { return this->nameH; }
 	string getHypotesis() { return this->_hypothesis; }
-	DayA * getDayA() { return d; }
+	DayA * getDayA() { return _dA; }
 private:
 	bool _is;
 	string nameH;
 	string _hypothesis;
-	DayA * d;
+	DayA * _dA;
 };
+
+template <>
+class DayH<Sunday> {
+public:
+	DayH(bool is, string hypothesis, DayA * dA) :
+		nameH("sunday"), _is(is), _hypothesis(hypothesis), _dA(dA) {}
+	bool getIs() { return this->_is; }
+	string getName() { return this->nameH; }
+	string getHypotesis() { return this->_hypothesis; }
+	DayA * getDayA() { return _dA; }
+private:
+	bool _is;
+	string nameH;
+	string _hypothesis;
+	DayA * _dA;
+};
+
 
