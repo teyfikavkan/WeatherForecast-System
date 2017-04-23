@@ -4,21 +4,23 @@
 class DayA 
 {
 public:
-	void push(string day, string events, bool situation,double LS,double LN, double prior) {
-		_days.push_back(day); _events.push_back(events); _situation.push_back(situation); 
-		_LS = LN; _LN = LN; _prior = prior;
+	DayA (string day, string events, bool situation,double LS,double LN, double prior) {
+		_days=day; _events=events; _situation=situation; 
+		_LS=LN; _LN=LN; _prior=prior;
 	}
-	string topDays() {return  _days.back(); }
-	string topEvents() {return  _events.back(); }
-	bool topSituation() {return _situation.back(); }
-	void popDays() { _days.pop_back(); }
-	void popEvents() { _events.pop_back(); }
-	void popSituation() { _situation.pop_back(); }
+	
+	bool getSituation() { return _situation; }
+	string getDays() { return  _days; }
+	string getEvents() { return  _events; }
+	double getLS() { return _LS; }
+	double getLN() { return _LN; }
+	double getPrior() { return _prior; }
+
 private:
 	double _LS;
 	double _LN;
 	double _prior;
-	vector<string> _days;
-	vector<string> _events;
-	vector<bool>  _situation;
+	string _days;
+	string _events;
+	bool  _situation;
 };
