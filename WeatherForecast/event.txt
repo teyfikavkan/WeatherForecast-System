@@ -1,0 +1,6 @@
+rainy
+yes
+windy
+yes
+warm
+yes

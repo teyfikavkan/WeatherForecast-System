@@ -2,31 +2,23 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 using namespace std;
 
-class Events 
+class Event
 {
 public:
-	void push(string day, string events, bool situation) {
-		_daysE.push_back(day); _eventsE.push_back(events); _situationE.push_back(situation);
-		itDay = _daysE.begin(); itEvent = _eventsE.begin(); itSituation = _situationE.begin();
-		begin = _daysE.begin(); end = _daysE.end();
+	Event(string e, string s) : _eventE(e), _situationE(s) {}
+	Event() {}
 
-	}
-	string topDaysE() { return  _daysE.back(); }
-	string topEventsE() { return  _eventsE.back(); }
-	bool topSituationE() { return _situationE.back(); }
-	void popDaysE() { _daysE.pop_back(); }
-	void popEventsE() { _eventsE.pop_back(); }
-	void popSituationE() { _situationE.pop_back(); }
-	vector<string>::iterator begin;
-	vector<string>::iterator end;
-	vector<string>::iterator itDay;
-	vector<string>::iterator itEvent;
-	vector<bool>::iterator itSituation;
+	void setEventE(string e) { this->_eventE = e; }
+	void setSituationE(string s) { this->_situationE = s; }
+
+	string getEventE() { return this->_eventE; }
+	string getSituationE() { return this->_situationE; }
+
+
 private:
-	
-	vector<string> _daysE;
-	vector<string> _eventsE;
-	vector<bool>  _situationE;
+	string _eventE;
+	string  _situationE;
 };

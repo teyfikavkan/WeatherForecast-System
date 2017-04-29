@@ -1,37 +1,44 @@
 #pragma once
-#include "AcceptedEvents.h"
+#include "DayH.h"
 
-class DayA 
+
+class DayA
 {
 public:
-	DayA (string day, string events, bool situation) {
-		_daysA.push_back(day); _eventsA.push_back(events); _situationA.push_back(situation);
-		itDayA = _daysA.begin(); itEventA = _eventsA.begin(); itSituationA = _situationA.begin();
-		beginA = _daysA.begin(); endA = _daysA.end();
+	DayA(DayH * dH) { _dH = dH; _result = 0; }
+	void setInfo(double LS, double LN, double prior) { _LS = LS; _LN = LN; _prior = prior; }
+	void setEventA(string e) {  _eventA.push_back(e); }
+	void setSituationA(string s) { _situationA.push_back(s); }
+	void setDayNum(int dayNum) { _dayNum = dayNum; }
+	void setResult(double result) { _result = result; }
 
-	}
-	void setInfo(double LS, double LN, double prior){ _LS=LN; _LN=LN; _prior=prior; }
-	string topDaysA() { return  _daysA.back(); }
-	string topEventsA() { return  _eventsA.back(); }
-	bool topSituationA() { return _situationA.back(); }
-	void popDaysA() { _daysA.pop_back(); }
-	void popEventsA() { _eventsA.pop_back(); }
+	string topEventA() { return  _eventA.back(); }
+	string topSituationA() { return _situationA.back(); }
+	int getDayNum() { return this->_dayNum; }
+	double getResult() { return _result; }
+
+	void popEventsA() { _eventA.pop_back(); }
 	void popSituationA() { _situationA.pop_back(); }
-	vector<string>::iterator beginA;
-	vector<string>::iterator endA;
-	vector<string>::iterator itDayA;
-	vector<string>::iterator itEventA;
-	vector<bool>::iterator itSituationA;
-	
+	void initialIterator() { itEvBeg = _eventA.begin(); itEvBeg = _eventA.end(); itStBeg = _situationA.begin(); itStEnd = _situationA.end(); }
+
 	double getLS() { return _LS; }
 	double getLN() { return _LN; }
 	double getPrior() { return _prior; }
+	DayH * getDayH() { return _dH; }
+	
+	vector<string>::iterator itEvBeg;
+	vector<string>::iterator itEvEnd;
+	vector<string>::iterator itStBeg;
+	vector<string>::iterator itStEnd;
 
+	vector<string> _eventA;
+	vector<string>  _situationA;
 private:
+	double _result;
 	double _LS;
 	double _LN;
-    double _prior;
-	vector<string> _daysA;
-	vector<string> _eventsA;
-	vector<bool>  _situationA;
+	double _prior;
+	int _dayNum;
+	DayH * _dH;
+
 };
